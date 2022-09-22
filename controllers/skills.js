@@ -48,7 +48,7 @@ function show(req, res) {
 function deleteSkill(req, res) {
   Skill.findByIdAndDelete(req.params.id)
   .then(skill => {
-    res.redirect('/skills')
+    res.redirect('/skills/show')
   })
   .catch(error => {
     console.log(error)
