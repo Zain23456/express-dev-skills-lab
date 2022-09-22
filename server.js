@@ -20,6 +20,12 @@ app.set(
 )
 app.set('view engine', 'ejs')
 
+//custom middleware
+app.use(function(req, res, next) {
+  req.date = new Date().toLocaleDateString()
+  next()
+})
+
 // middleware
 app.use(logger('dev'))
 app.use(express.json())

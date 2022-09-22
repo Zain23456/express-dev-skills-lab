@@ -5,7 +5,8 @@ function index(req, res) {
   Skill.find({})
   .then(skills => {
     res.render('skills/index', {
-      skills: skills
+      skills: skills,
+      date: req.date
     })
   })
   .catch(error => {
